@@ -12,8 +12,13 @@ public class PasswordUtils {
 
     }
 
-    // Classe de criptografia criada a partir do pacote spring-boot-starter-security
-    public static String geraBCrypt(String senha) {
+    /** Classe de criptografia criada a partir do pacote spring-boot-starter-security
+     * Gera um hash utilizando o BCrypt.
+     *
+     * @param senha
+     * @return String
+     */
+    public static String gerarBCrypt(String senha) {
         if (senha == null) {
             return senha;
         }
@@ -21,6 +26,18 @@ public class PasswordUtils {
         log.info("Gerando hash com o BCrypt.");
         BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
         return bCryptPasswordEncoder.encode(senha);
+    }
+
+    /**
+     * Verifica se a senha é válida.
+     *
+     * @param senha
+     * @param senhaEncoded
+     * @return boolean
+     */
+    public static boolean senhaValida ( String senha , String senhaEncoded ) {
+        BCryptPasswordEncoder bCryptEncoder = new BCryptPasswordEncoder ();
+        return bCryptEncoder . matches ( senha , senhaEncoded );
     }
 }
 
