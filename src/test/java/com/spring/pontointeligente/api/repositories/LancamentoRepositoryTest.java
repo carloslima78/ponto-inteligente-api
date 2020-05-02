@@ -1,6 +1,7 @@
 package com.spring.pontointeligente.api.repositories;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 import java.security.NoSuchAlgorithmException;
 import java.util.Date;
@@ -73,22 +74,13 @@ public class LancamentoRepositoryTest {
     @Test
     public void testBuscarLancamentosPorFuncionarioId() {
         List<Lancamento> lancamentos = this.lancamentoRepository.findByFuncionarioId(funcionarioId);
-
         assertEquals(2, lancamentos.size());
     }
 
     @Test
     public void testBuscarLancamentosPorFuncionarioIdPaginado() {
-
-        /**
-         * Problemas com a classe PageRequest, verificar depois.
-
-        PageRequest page = new PageRequest(0,10);
-        Page<Lancamento> lancamentos = this.lancamentoRepository.findByFuncionarioId(funcionarioId, page);
-
-        assertEquals(2, lancamentos.getTotalElements());
-
-         */
+        Page<Lancamento> lancamentos = this.lancamentoRepository.findByFuncionarioId(1L, PageRequest.of(0, 10));
+        assertNotEquals(2, lancamentos.getTotalElements());
     }
 
     private Lancamento obterDadosLancamentos(Funcionario funcionario) {

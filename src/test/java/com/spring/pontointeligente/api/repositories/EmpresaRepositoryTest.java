@@ -1,6 +1,5 @@
 package com.spring.pontointeligente.api.repositories;
 
-
 import static org.junit.Assert.assertEquals;
 
 import org.junit.After;

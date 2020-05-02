@@ -19,7 +19,6 @@ import com.spring.pontointeligente.api.entities.Funcionario;
 import com.spring.pontointeligente.api.enums.PerfilEnum;
 import com.spring.pontointeligente.api.utils.PasswordUtils;
 
-import javax.xml.ws.Action;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
