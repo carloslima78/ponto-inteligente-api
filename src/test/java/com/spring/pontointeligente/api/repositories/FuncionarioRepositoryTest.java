@@ -24,7 +24,7 @@ import javax.xml.ws.Action;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 /**
- * Utilizando o profile de testes "test" conforme arquivo "application.test.properties".
+ * Utilizando o profile de testes "test" conforme arquivo "application-test.properties".
  * O nome entre "application" e "properties" no caso "test", é o nome do profile.
  */
 @ActiveProfiles("test")
