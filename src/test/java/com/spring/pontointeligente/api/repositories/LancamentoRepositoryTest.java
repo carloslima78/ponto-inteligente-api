@@ -55,10 +55,8 @@ public class LancamentoRepositoryTest {
     @Before
     public void setUp() throws Exception {
         Empresa empresa = this.empresaRepository.save(obterDadosEmpresa());
-
         Funcionario funcionario = this.funcionarioRepository.save(obterDadosFuncionario(empresa));
         this.funcionarioId = funcionario.getId();
-
         this.lancamentoRepository.save(obterDadosLancamentos(funcionario));
         this.lancamentoRepository.save(obterDadosLancamentos(funcionario));
     }

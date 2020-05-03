@@ -13,7 +13,7 @@ import com.spring.pontointeligente.api.services.FuncionarioService;
 
 
 @Service
-public class FuncionarioServiceImpl {
+public class FuncionarioServiceImpl implements FuncionarioService {
 
     private static final Logger log = LoggerFactory.getLogger(FuncionarioServiceImpl.class);
 

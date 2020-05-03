@@ -25,7 +25,7 @@ import com.spring.pontointeligente.api.repositories.FuncionarioRepository;
 public class FuncionarioServiceTest {
 
     @MockBean
-private FuncionarioRepository funcionarioRepository;
+    private FuncionarioRepository funcionarioRepository;
 
     @Autowired
     private FuncionarioService funcionarioService;
@@ -47,7 +47,7 @@ private FuncionarioRepository funcionarioRepository;
 
     @Test
     public void testBuscarFuncionarioPorId() {
-        Optional<Funcionario> funcionario = this.funcionarioService.buscarPorId(1L);
+        Optional<Optional<Funcionario>> funcionario = this.funcionarioService.buscarPorId(1L);
 
         assertTrue(funcionario.isPresent());
     }
